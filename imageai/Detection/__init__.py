@@ -6,8 +6,6 @@ from imageai.Detection.keras_retinanet.utils.image import read_image_bgr, read_i
 from imageai.Detection.keras_retinanet.utils.visualization import draw_box, draw_caption
 from imageai.Detection.keras_retinanet.utils.colors import label_color
 
-import matplotlib.pyplot as plt
-import matplotlib.image as pltimage
 import numpy as np
 import tensorflow as tf
 import os
@@ -388,13 +386,11 @@ class ObjectDetection:
                                 splitted_image_path = os.path.join(objects_dir,
                                                                    self.numbers_to_names[label] + "-" + str(
                                                                        counting) + ".jpg")
-                                pltimage.imsave(splitted_image_path, splitted_copy)
                                 detected_objects_image_array.append(splitted_image_path)
                             elif (output_type == "array"):
                                 detected_objects_image_array.append(splitted_copy)
 
                     if (output_type == "file"):
-                        pltimage.imsave(output_image_path, detected_copy)
 
                     if (extract_detected_objects == True):
                         if (output_type == "file"):
@@ -501,13 +497,11 @@ class ObjectDetection:
                                 splitted_image_path = os.path.join(objects_dir,
                                                                    predicted_class + "-" + str(
                                                                        counting) + ".jpg")
-                                pltimage.imsave(splitted_image_path, splitted_copy)
                                 detected_objects_image_array.append(splitted_image_path)
                             elif (output_type == "array"):
                                 detected_objects_image_array.append(splitted_copy)
 
                     if (output_type == "file"):
-                        pltimage.imsave(output_image_path, detected_copy)
 
                     if (extract_detected_objects == True):
                         if (output_type == "file"):
@@ -746,13 +740,11 @@ class ObjectDetection:
                                 splitted_image_path = os.path.join(objects_dir,
                                                                    self.numbers_to_names[label] + "-" + str(
                                                                        counting) + ".jpg")
-                                pltimage.imsave(splitted_image_path, splitted_copy)
                                 detected_objects_image_array.append(splitted_image_path)
                             elif (output_type == "array"):
                                 detected_objects_image_array.append(splitted_copy)
 
                     if (output_type == "file"):
-                        pltimage.imsave(output_image_path, detected_copy)
 
                     if (extract_detected_objects == True):
                         if (output_type == "file"):
@@ -862,13 +854,11 @@ class ObjectDetection:
                                 splitted_image_path = os.path.join(objects_dir,
                                                                    predicted_class + "-" + str(
                                                                        counting) + ".jpg")
-                                pltimage.imsave(splitted_image_path, splitted_copy)
                                 detected_objects_image_array.append(splitted_image_path)
                             elif (output_type == "array"):
                                 detected_objects_image_array.append(splitted_copy)
 
                     if (output_type == "file"):
-                        pltimage.imsave(output_image_path, detected_copy)
 
                     if (extract_detected_objects == True):
                         if (output_type == "file"):

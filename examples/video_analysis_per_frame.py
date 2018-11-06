@@ -1,6 +1,5 @@
 from imageai.Detection import VideoObjectDetection
 import os
-from matplotlib import pyplot as plt
 
 
 execution_path = os.getcwd()
