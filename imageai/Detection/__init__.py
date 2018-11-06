@@ -390,7 +390,6 @@ class ObjectDetection:
                             elif (output_type == "array"):
                                 detected_objects_image_array.append(splitted_copy)
 
-                    if (output_type == "file"):
 
                     if (extract_detected_objects == True):
                         if (output_type == "file"):
@@ -501,7 +500,6 @@ class ObjectDetection:
                             elif (output_type == "array"):
                                 detected_objects_image_array.append(splitted_copy)
 
-                    if (output_type == "file"):
 
                     if (extract_detected_objects == True):
                         if (output_type == "file"):
@@ -744,7 +742,6 @@ class ObjectDetection:
                             elif (output_type == "array"):
                                 detected_objects_image_array.append(splitted_copy)
 
-                    if (output_type == "file"):
 
                     if (extract_detected_objects == True):
                         if (output_type == "file"):
@@ -858,7 +855,6 @@ class ObjectDetection:
                             elif (output_type == "array"):
                                 detected_objects_image_array.append(splitted_copy)
 
-                    if (output_type == "file"):
 
                     if (extract_detected_objects == True):
                         if (output_type == "file"):
