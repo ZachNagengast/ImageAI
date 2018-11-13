@@ -1,5 +1,3 @@
-import cv2
-
 from imageai.Detection.keras_retinanet.models.resnet import resnet50_retinanet
 from imageai.Detection.keras_retinanet.utils.image import read_image_bgr, read_image_array, read_image_stream, \
     preprocess_image, resize_image
@@ -328,10 +326,10 @@ class ObjectDetection:
                         image = read_image_stream(input_image)
 
                     detected_copy = image.copy()
-                    detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
+                    # detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
 
                     detected_copy2 = image.copy()
-                    detected_copy2 = cv2.cvtColor(detected_copy2, cv2.COLOR_BGR2RGB)
+                    # detected_copy2 = cv2.cvtColor(detected_copy2, cv2.COLOR_BGR2RGB)
 
                     image = preprocess_image(image)
                     image, scale = resize_image(image, min_side=self.__input_image_min, max_side=self.__input_image_max)
@@ -418,10 +416,10 @@ class ObjectDetection:
                         input_image = read_image_stream(input_image)
 
                     detected_copy = input_image
-                    detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
+                    # detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
 
                     detected_copy2 = input_image
-                    detected_copy2 = cv2.cvtColor(detected_copy2, cv2.COLOR_BGR2RGB)
+                    # detected_copy2 = cv2.cvtColor(detected_copy2, cv2.COLOR_BGR2RGB)
 
                     new_image_size = (self.__yolo_model_image_size[0] - (self.__yolo_model_image_size[0] % 32),
                                       self.__yolo_model_image_size[1] - (self.__yolo_model_image_size[1] % 32))
@@ -675,10 +673,10 @@ class ObjectDetection:
                         image = read_image_stream(input_image)
 
                     detected_copy = image.copy()
-                    detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
+                    # detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
 
                     detected_copy2 = image.copy()
-                    detected_copy2 = cv2.cvtColor(detected_copy2, cv2.COLOR_BGR2RGB)
+                    # detected_copy2 = cv2.cvtColor(detected_copy2, cv2.COLOR_BGR2RGB)
 
                     image = preprocess_image(image)
                     image, scale = resize_image(image, min_side=self.__input_image_min, max_side=self.__input_image_max)
@@ -769,10 +767,10 @@ class ObjectDetection:
                         input_image = read_image_stream(input_image)
 
                     detected_copy = input_image
-                    detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
+                    # detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
 
                     detected_copy2 = input_image
-                    detected_copy2 = cv2.cvtColor(detected_copy2, cv2.COLOR_BGR2RGB)
+                    # detected_copy2 = cv2.cvtColor(detected_copy2, cv2.COLOR_BGR2RGB)
 
                     new_image_size = (self.__yolo_model_image_size[0] - (self.__yolo_model_image_size[0] % 32),
                                       self.__yolo_model_image_size[1] - (self.__yolo_model_image_size[1] % 32))
@@ -1414,7 +1412,7 @@ class VideoObjectDetection:
                     output_frames_dict = {}
                     output_frames_count_dict = {}
 
-                    input_video = cv2.VideoCapture(input_file_path)
+                    # input_video = cv2.VideoCapture(input_file_path)
 
                     if (camera_input != None):
                         input_video = camera_input
@@ -1423,9 +1421,9 @@ class VideoObjectDetection:
 
                     frame_width = int(input_video.get(3))
                     frame_height = int(input_video.get(4))
-                    output_video = cv2.VideoWriter(output_video_filepath, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),
-                                                   frames_per_second,
-                                                   (frame_width, frame_height))
+                    # output_video = cv2.VideoWriter(output_video_filepath, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),
+                                                #    frames_per_second,
+                                                #    (frame_width, frame_height))
 
                     counting = 0
                     out_boxes = None
@@ -1447,7 +1445,7 @@ class VideoObjectDetection:
                                 print("Processing Frame : ", str(counting))
 
                             detected_copy = frame.copy()
-                            detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
+                            # detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
 
                             frame = Image.fromarray(np.uint8(frame))
 
@@ -1520,7 +1518,7 @@ class VideoObjectDetection:
                                     output_objects_count[eachItemName] = 1
 
                             output_frames_count_dict[counting] = output_objects_count
-                            detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
+                            # detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
 
                             if (save_detected_video == True):
                                 output_video.write(detected_copy)
@@ -1836,7 +1834,7 @@ class VideoObjectDetection:
                     output_frames_dict = {}
                     output_frames_count_dict = {}
 
-                    input_video = cv2.VideoCapture(input_file_path)
+                    # input_video = cv2.VideoCapture(input_file_path)
                     if (camera_input != None):
                         input_video = camera_input
 
@@ -1844,9 +1842,9 @@ class VideoObjectDetection:
 
                     frame_width = int(input_video.get(3))
                     frame_height = int(input_video.get(4))
-                    output_video = cv2.VideoWriter(output_video_filepath, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),
-                                                   frames_per_second,
-                                                   (frame_width, frame_height))
+                    # output_video = cv2.VideoWriter(output_video_filepath, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),
+                    #                                frames_per_second,
+                    #                                (frame_width, frame_height))
 
                     counting = 0
                     predicted_numbers = None
@@ -1868,7 +1866,7 @@ class VideoObjectDetection:
                                 print("Processing Frame : ", str(counting))
 
                             detected_copy = frame.copy()
-                            detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
+                            # detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
 
                             frame = preprocess_image(frame)
                             frame, scale = resize_image(frame, min_side=self.__input_image_min,
@@ -1927,7 +1925,7 @@ class VideoObjectDetection:
 
                             output_frames_count_dict[counting] = output_objects_count
 
-                            detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
+                            # detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
 
                             if (save_detected_video == True):
                                 output_video.write(detected_copy)
@@ -2049,7 +2047,7 @@ class VideoObjectDetection:
                     output_frames_dict = {}
                     output_frames_count_dict = {}
 
-                    input_video = cv2.VideoCapture(input_file_path)
+                    # input_video = cv2.VideoCapture(input_file_path)
                     if (camera_input != None):
                         input_video = camera_input
 
@@ -2057,9 +2055,9 @@ class VideoObjectDetection:
 
                     frame_width = int(input_video.get(3))
                     frame_height = int(input_video.get(4))
-                    output_video = cv2.VideoWriter(output_video_filepath, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),
-                                                   frames_per_second,
-                                                   (frame_width, frame_height))
+                    # output_video = cv2.VideoWriter(output_video_filepath, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),
+                    #                                frames_per_second,
+                    #                                (frame_width, frame_height))
 
                     counting = 0
                     out_boxes = None
@@ -2081,7 +2079,7 @@ class VideoObjectDetection:
                                 print("Processing Frame : ", str(counting))
 
                             detected_copy = frame.copy()
-                            detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
+                            # detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
 
                             frame = Image.fromarray(np.uint8(frame))
 
@@ -2159,7 +2157,7 @@ class VideoObjectDetection:
 
                             output_frames_count_dict[counting] = output_objects_count
 
-                            detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
+                            # detected_copy = cv2.cvtColor(detected_copy, cv2.COLOR_BGR2RGB)
 
                             if (save_detected_video == True):
                                 output_video.write(detected_copy)

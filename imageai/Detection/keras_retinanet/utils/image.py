@@ -19,7 +19,7 @@ import keras
 import time
 import numpy as np
 import scipy.ndimage as ndi
-import cv2
+# import cv2
 from PIL import Image
 
 from .transform import change_transform_origin, transform_aabb
@@ -114,27 +114,27 @@ class TransformParameters:
         else:
             raise ValueError("invalid data_format, expected 'channels_first' or 'channels_last', got '{}'".format(data_format))
 
-    def cvBorderMode(self):
-        if self.fill_mode == 'constant':
-            return cv2.BORDER_CONSTANT
-        if self.fill_mode == 'nearest':
-            return cv2.BORDER_REPLICATE
-        if self.fill_mode == 'reflect':
-            return cv2.BORDER_REFLECT_101
-        if self.fill_mode == 'wrap':
-            return cv2.BORDER_WRAP
+    # def cvBorderMode(self):
+    #     if self.fill_mode == 'constant':
+    #         return cv2.BORDER_CONSTANT
+    #     if self.fill_mode == 'nearest':
+    #         return cv2.BORDER_REPLICATE
+    #     if self.fill_mode == 'reflect':
+    #         return cv2.BORDER_REFLECT_101
+    #     if self.fill_mode == 'wrap':
+    #         return cv2.BORDER_WRAP
 
-    def cvInterpolation(self):
-        if self.interpolation == 'nearest':
-            return cv2.INTER_NEAREST
-        if self.interpolation == 'linear':
-            return cv2.INTER_LINEAR
-        if self.interpolation == 'cubic':
-            return cv2.INTER_CUBIC
-        if self.interpolation == 'area':
-            return cv2.INTER_AREA
-        if self.interpolation == 'lanczos4':
-            return cv2.INTER_LANCZOS4
+    # def cvInterpolation(self):
+    #     if self.interpolation == 'nearest':
+    #         return cv2.INTER_NEAREST
+    #     if self.interpolation == 'linear':
+    #         return cv2.INTER_LINEAR
+    #     if self.interpolation == 'cubic':
+    #         return cv2.INTER_CUBIC
+    #     if self.interpolation == 'area':
+    #         return cv2.INTER_AREA
+    #     if self.interpolation == 'lanczos4':
+    #         return cv2.INTER_LANCZOS4
 
 
 def apply_transform(matrix, image, params):
@@ -183,6 +183,6 @@ def resize_image(img, min_side=800, max_side=1333):
         scale = max_side / largest_side
 
     # resize the image with the computed scale
-    img = cv2.resize(img, None, fx=scale, fy=scale)
+    # img = cv2.resize(img, None, fx=scale, fy=scale)
 
     return img, scale

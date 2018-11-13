@@ -22,7 +22,7 @@ from .visualization import draw_detections, draw_annotations
 import numpy as np
 import os
 
-import cv2
+# import cv2
 import pickle
 
 
@@ -111,7 +111,7 @@ def _get_detections(generator, model, score_threshold=0.05, max_detections=100, 
             draw_annotations(raw_image, generator.load_annotations(i), generator=generator)
             draw_detections(raw_image, detections[0, indices[0][scores_sort], :], generator=generator)
 
-            cv2.imwrite(os.path.join(save_path, '{}.png'.format(i)), raw_image)
+            # cv2.imwrite(os.path.join(save_path, '{}.png'.format(i)), raw_image)
 
         # copy detections to all_detections
         for label in range(generator.num_classes()):

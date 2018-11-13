@@ -1,6 +1,6 @@
 from imageai.Detection import VideoObjectDetection
 import os
-import cv2
+# import cv2
 
 execution_path = os.getcwd()
 
